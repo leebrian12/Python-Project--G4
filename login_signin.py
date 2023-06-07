@@ -19,42 +19,43 @@ def load_users():
 def customer_register(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    users[username] = {'password': password, 'role': 'customer'}
+    users[username] = {'password': password, 'role': 'User'}
     save_users(users)
     print("Registration successful!")
 
 def admin_register(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    users[username] = {'password': password, 'role': 'admin'}
+    users[username] = {'password': password, 'role': 'Admin'}
     save_users(users)
     print("Registration successful!")
 
 def customer_login(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    if username in users and users[username]['password'] == password and users[username]['role'] == 'customer':
+    if username in users and users[username]['password'] == password and users[username]['role'] == 'User':
         print("Welcome Customer login successful!")
         act = 1
         return act
     else:
-        print("Invalid credentials or user is not a customer.")
+        print("\nInvalid account or not a User account.")
 
 def admin_login(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    if username in users and users[username]['password'] == password and users[username]['role'] == 'admin':
+    if username in users and users[username]['password'] == password and users[username]['role'] == 'Admin':
         print("Welcome Admin login successful!")
         act = 2
         return act
     else:
-        print("Invalid credentials or user is not an admin.")
+        print("Invalid account or not an Admin account.")
 
 def login():
     users = load_users()
 
 
     while True:
+        print("\n===+ Welcome to Fantastos +===\n")
         print("1. Customer Registration")
         print("2. Admin Registration")
         print("3. Customer Login")

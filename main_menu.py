@@ -1,4 +1,4 @@
-import login_signin
+import Register_SignIn
 
 def user_displayMenu():#这边是改user menu 的
     print("\n1.Pulau Langkawi		3D2N  	RM 150.00 RM 105.00")
@@ -44,17 +44,15 @@ while True:
 def admin_displayMenu():#这边是改admin menu 的
     print("\nhahahah admin")
 
-def main(choose): #这里是main 咯
+def main(choice): #这里是main 咯
     
-    if(choose == 1):
+    if(choice == 1):
         user_displayMenu()
-    elif(choose == 2):
+    elif(choice == 2):
         admin_displayMenu()
     else:
-        print("Thank You")
+        print("Thank You for choosing Fantastos")
 
 
 
-choose = login_signin.login()
-
-main(choose)
+choose = Register_SignIn.login()
