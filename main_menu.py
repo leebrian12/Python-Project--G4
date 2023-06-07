@@ -1,4 +1,4 @@
-import Register_SignIn
+import login_signin
 
 def user_displayMenu():#这边是改user menu 的
     print("\n1.Pulau Langkawi		3D2N  	RM 150.00 RM 105.00")
@@ -21,4 +21,4 @@ def main(choice): #这里是main 咯
 
 
 
-choose = Register_SignIn.login()
+choose = login_signin.login()
