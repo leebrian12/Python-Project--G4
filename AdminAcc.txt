@@ -1,2 +1,0 @@
-username=HAHA
-password=123
