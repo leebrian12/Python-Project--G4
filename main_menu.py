@@ -53,7 +53,8 @@ def main(choice): #这里是main
     else:
         print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
 
-choice = login_signin.login()
+choice = login_signin.main()
 
+main(choice)
 
 
