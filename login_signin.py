@@ -48,66 +48,69 @@ def admin_login(users):
     else:
         print("INVALID ACCOUNT or not an Admin account.")
 
+def part2():
+    users = load_users()
+    print("\n+++++++++ USER MENU +++++++++\n")
+    print("         1. Register")
+    print("         2. Login")
+    print("         3. Exit")
+
+    choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
+
+    if(choice == '1'):
+        customer_register(users)
+    elif(choice == '2'):
+        suc = customer_login(users)
+        if(suc == 1):
+            type = 1
+            return type 
+    elif(choice == '3'):
+        main()
+    else:
+        print("\nInvalid Choice! Please try again.")
+
+
+def part3():
+    users = load_users()
+    print("\n+++++++++ ADMIN MENU +++++++++\n")
+    print("         1. Register")
+    print("         2. Login")
+    print("         3. Exit")
+
+    choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
+
+    if(choice == '1'):
+        admin_register(users)
+    elif(choice == '2'):
+        suc = admin_login(users)
+        if(suc == 2):
+            type = 2
+            return type 
+    elif(choice == '3'):
+        main()
+    else:
+        print("\nInvalid Choice! Please try again.")
+
+def main():
+    print("\n===+ Welcome to Fantastos +===\n")
+    print("         1. User")
+    print("         2. Admin")
+    print("         3. Exit")
+
+    choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
+    if choice == '1':
+        part2()
+    elif choice == '2':
+        part3()
+    elif choice == '3':
+        print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
+        exit(0)
+    else:
+        print("\nInvalid Choice! Please try again.")
+
 def login():
     users = load_users()
 
     while True:
-        print("\n===+ Welcome to Fantastos +===\n")
-        print("         1. User")
-        print("         2. Admin")
-        print("         3. Exit")
-
-        choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
-        if choice == '1':
-            print("\n+++++++++ USER MENU +++++++++\n")
-            print("         1. Register")
-            print("         2. Login")
-            print("         3. Exit")
-
-            choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
-
-            if(choice == '1'):
-                customer_register(users)
-            elif(choice == '2'):
-                suc = customer_login(users)
-                if(suc == 1):
-                    type = 1
-                    return type 
-                    break
-                else:
-                    continue
-            elif(choice == '3'):
-                break
-            else:
-                print("\nInvalid Choice! Please try again.")
-        
-        elif choice == '2':
-            print("\n+++++++++ ADMIN MENU +++++++++\n")
-            print("         1. Register")
-            print("         2. Login")
-            print("         3. Exit")
-
-            choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
-
-            if(choice == '1'):
-                admin_register(users)
-            elif(choice == '2'):
-                suc = admin_login(users)
-                if(suc == 2):
-                    type = 2
-                    return type 
-                    break
-                else:
-                    continue
-            elif(choice == '3'):
-                break
-            else:
-                print("\nInvalid Choice! Please try again.")
-
-        elif choice == '3':
-            print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
-            break
-
-        else:
-            print("\nInvalid Choice! Please try again.")
+        main()
 
