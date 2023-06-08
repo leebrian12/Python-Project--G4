@@ -28,7 +28,7 @@ def check_package(package_name):
         if package.package_name == package_name:
             return package
 
-    return None
+    return customer_displayMenu
 
 # Example usage
 package_name = input("Enter the package name: ")
