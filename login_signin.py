@@ -56,37 +56,56 @@ def login():
 
     while True:
         print("\n===+ Welcome to Fantastos +===\n")
-        print("1. Customer Registration")
-        print("2. Admin Registration")
-        print("3. Customer Login")
-        print("4. Admin Login")
-        print("5. Exit")
+        print("1.Customer")
+        print("2.Admin")
+        print("3.Exit")
 
-        choice = input("Enter your choice (1-5): ")
+        choose = input("Please choose the type")
+        if choose == '1':
+            print("\n===+ Welcome to Fantastos +===\n")
+            print("1. Customer Registration")
+            print("2. Customer Login")
+            print("3. Exit")
 
-        if choice == '1':
-            customer_register(users)
-        elif choice == '2':
-            admin_register(users)
-        elif choice == '3':
-            suc = customer_login(users)
-            if(suc == 1):
-                type = 1
-                return type 
+            choice = input("Enter your choice (1-3): ")
+
+            if choice == '1':
+                customer_register(users)
+            elif choice == '2':
+                suc = customer_login(users)
+                if(suc == 1):
+                    type = 1
+                    return type 
+                    break
+                else:
+                        continue
+            elif choice == '3':
                 break
             else:
-                continue
-        elif choice == '4':
-            suc = admin_login(users)
-            if(suc == 2):
-                type = 2
-                return type 
+                print("Invalid choice. Please try again.")
+        elif choose == '2':
+            print("\n===+ Welcome to Fantastos +===\n")
+            print("1. Admin Registration")
+            print("2. Admin Login")
+            print("3. Exit")
+
+            choice = input("Enter your choice (1-3): ")
+
+            if choice == '1':
+                admin_register(users)
+            elif choice == '2':
+                suc = admin_login(users)
+                if(suc == 2):
+                    type = 2
+                    return type 
+                    break
+                else:
+                    continue
+            elif choice == '3':
                 break
             else:
-                continue
-        elif choice == '5':
-            break
+                print("Invalid choice. Please try again.")
         else:
-            print("Invalid choice. Please try again.")
+            break
 
 
