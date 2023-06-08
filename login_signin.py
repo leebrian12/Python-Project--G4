@@ -57,6 +57,7 @@ def part2():
 
     choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
 
+
     if(choice == '1'):
         customer_register(users)
     elif(choice == '2'):
@@ -64,6 +65,7 @@ def part2():
         if(suc == 1):
             type = 1
             return type 
+
     elif(choice == '3'):
         main()
     else:
@@ -85,11 +87,12 @@ def part3():
         suc = admin_login(users)
         if(suc == 2):
             type = 2
-            return type 
+            return type
     elif(choice == '3'):
         main()
     else:
         print("\nInvalid Choice! Please try again.")
+
 
 def main():
     print("\n===+ Welcome to Fantastos +===\n")
@@ -100,17 +103,40 @@ def main():
     choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
     if choice == '1':
         part2()
+        type = 1
+        return type
     elif choice == '2':
-        part3()
+            part3()
+            type = 2
+            return type
     elif choice == '3':
-        print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
-        exit(0)
+            print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
+            exit(0)
     else:
-        print("\nInvalid Choice! Please try again.")
+            print("\nInvalid Choice! Please try again.")
 
 def login():
-    users = load_users()
+ 
 
     while True:
-        main()
+        print("\n===+ Welcome to Fantastos +===\n")
+        print("         1. User")
+        print("         2. Admin")
+        print("         3. Exit")
+
+        choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
+        if choice == '1':
+            part2()
+            type = 1
+            return type
+        elif choice == '2':
+            part3()
+            type = 2
+            return type
+        elif choice == '3':
+            print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
+            exit(0)
+        else:
+            print("\nInvalid Choice! Please try again.")
+            
 
