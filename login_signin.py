@@ -59,7 +59,7 @@ def login():
 
         choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
         if choice == '1':
-            print("\n========= User Menu =========\n")
+            print("\n+++++++++ USER MENU +++++++++\n")
             print("         1. Register")
             print("         2. Login")
             print("         3. Exit")
@@ -79,10 +79,10 @@ def login():
             elif(choice == '3'):
                 break
             else:
-                print("\nInvalid Choice! Please try again 1.")
+                print("\nInvalid Choice! Please try again.")
         
         elif choice == '2':
-            print("\n========= Admin Menu =========\n")
+            print("\n+++++++++ ADMIN MENU +++++++++\n")
             print("         1. Register")
             print("         2. Login")
             print("         3. Exit")
@@ -102,10 +102,11 @@ def login():
             elif(choice == '3'):
                 break
             else:
-                print("\nInvalid Choice! Please try again. 2")
+                print("\nInvalid Choice! Please try again.")
 
         elif choice == '3':
             print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
+            break
 
         else:
             print("\nInvalid Choice! Please try again.")
