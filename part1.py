@@ -75,3 +75,78 @@ class TravelOrder:
 order = TravelOrder("John Doe", "Paris", "2023-08-20", 6, 1000)
 bill = order.calculate_bill()
 print(f"The bill amount is: RM {bill:.2f}")
+
+
+#check package
+class TravelPackage:
+    def __init__(self, package_name, destination, price, availability):
+        self.package_name = package_name
+        self.destination = destination
+        self.price = price
+        self.availability = availability
+
+def check_package(package_name):
+    # Assume we have a list of available packages
+    available_packages = [
+        TravelPackage("Package A", "Paris", 2000, 5),
+        TravelPackage("Package B", "Tokyo", 2500, 3),
+        TravelPackage("Package C", "New York", 1800, 8),
+    ]
+
+    for package in available_packages:
+        if package.package_name == package_name:
+            return package
+
+    return None
+
+# Example usage
+package_name = input("Enter the package name: ")
+package = check_package(package_name)
+
+if package:
+    print(f"Package: {package.package_name}")
+    print(f"Destination: {package.destination}")
+    print(f"Price: ${package.price}")
+    print(f"Availability: {package.availability} spots")
+else:
+    print("Package not found!")
+
+#view cart 
+class TravelPackage:
+    def __init__(self, package_name, destination, price):
+        self.package_name = package_name
+        self.destination = destination
+        self.price = price
+
+class TravelCart:
+    def __init__(self):
+        self.cart_items = []
+
+    def add_to_cart(self, package):
+        self.cart_items.append(package)
+
+    def remove_from_cart(self, package):
+        self.cart_items.remove(package)
+
+    def view_cart(self):
+        if not self.cart_items:
+            print("Your cart is empty.")
+        else:
+            print("Your cart contains the following packages:")
+            for item in self.cart_items:
+                print(f"- {item.package_name} | Destination: {item.destination} | Price: ${item.price}")
+
+# Example usage
+cart = TravelCart()
+
+# Add packages to the cart
+package1 = TravelPackage("Package A", "Paris", 2000)
+package2 = TravelPackage("Package B", "Tokyo", 2500)
+package3 = TravelPackage("Package C", "New York", 1800)
+
+cart.add_to_cart(package1)
+cart.add_to_cart(package2)
+cart.add_to_cart(package3)
+
+# View the cart
+cart.view_cart()
