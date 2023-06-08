@@ -1,5 +1,3 @@
-
-
 def save_users(users):
     with open('users_acount.txt', 'w') as file:
         for username, user_data in users.items():
@@ -34,66 +32,66 @@ def customer_login(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
     if username in users and users[username]['password'] == password and users[username]['role'] == 'User':
-        print("Welcome Customer login successful!")
+        print("\n~~~ Welcome Back User ~~~")
         act = 1
         return act
     else:
-        print("\nInvalid account or not a User account.")
+        print("\nINVALID ACCOUNT or not a User account.")
 
 def admin_login(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
     if username in users and users[username]['password'] == password and users[username]['role'] == 'Admin':
-        print("Welcome Admin login successful!")
+        print("\n~~~ Welcome Back Admin ~~~")
         act = 2
         return act
     else:
-        print("Invalid account or not an Admin account.")
+        print("INVALID ACCOUNT or not an Admin account.")
 
 def login():
     users = load_users()
 
-
     while True:
         print("\n===+ Welcome to Fantastos +===\n")
-        print("1.Customer")
-        print("2.Admin")
-        print("3.Exit")
+        print("         1. User")
+        print("         2. Admin")
+        print("         3. Exit")
 
-        choose = input("Please choose the type")
-        if choose == '1':
-            print("\n===+ Welcome to Fantastos +===\n")
-            print("1. Customer Registration")
-            print("2. Customer Login")
-            print("3. Exit")
+        choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
+        if choice == '1':
+            print("\n========= User Menu =========\n")
+            print("         1. Register")
+            print("         2. Login")
+            print("         3. Exit")
 
-            choice = input("Enter your choice (1-3): ")
+            choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
 
-            if choice == '1':
+            if(choice == '1'):
                 customer_register(users)
-            elif choice == '2':
+            elif(choice == '2'):
                 suc = customer_login(users)
                 if(suc == 1):
                     type = 1
                     return type 
                     break
                 else:
-                        continue
-            elif choice == '3':
+                    continue
+            elif(choice == '3'):
                 break
             else:
-                print("Invalid choice. Please try again.")
-        elif choose == '2':
-            print("\n===+ Welcome to Fantastos +===\n")
-            print("1. Admin Registration")
-            print("2. Admin Login")
-            print("3. Exit")
+                print("\nInvalid Choice! Please try again 1.")
+        
+        elif choice == '2':
+            print("\n========= Admin Menu =========\n")
+            print("         1. Register")
+            print("         2. Login")
+            print("         3. Exit")
 
-            choice = input("Enter your choice (1-3): ")
+            choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
 
-            if choice == '1':
+            if(choice == '1'):
                 admin_register(users)
-            elif choice == '2':
+            elif(choice == '2'):
                 suc = admin_login(users)
                 if(suc == 2):
                     type = 2
@@ -101,11 +99,14 @@ def login():
                     break
                 else:
                     continue
-            elif choice == '3':
+            elif(choice == '3'):
                 break
             else:
-                print("Invalid choice. Please try again.")
-        else:
-            break
+                print("\nInvalid Choice! Please try again. 2")
 
+        elif choice == '3':
+            print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
+
+        else:
+            print("\nInvalid Choice! Please try again.")
 

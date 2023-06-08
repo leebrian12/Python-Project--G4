@@ -44,17 +44,15 @@ while True:
 def admin_displayMenu():#这边是改admin menu 的
     print("\nhahahah admin")
 
-def main(choice): #这里是main 咯
+def main(choice): #这里是main
     
     if(choice == 1):
         user_displayMenu()
     elif(choice == 2):
         admin_displayMenu()
     else:
-        print("Thank You for choosing Fantastos")
+        print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
 
-
-
-choose = login_signin.login()
+choice = login_signin.login()
 
 
