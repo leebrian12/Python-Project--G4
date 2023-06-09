@@ -1,32 +1,22 @@
 def customer_displayMenu():
 
-    print("\n\t\t\t=== Customer Menu === ")
+    print("=== Customer Menu === ")
     print("1. Check Package")
     print("2. View Cart")
     print("3. Payment")
     print("4. Exit")
 
-customer_displayMenu()
-
-def main(choice):
-
     choice=input("\nEnter your choice ('1' or '2' or '3' or '4'): ")
 
-    if(choice == 1):
-        TravelPackage()
-    elif(choice == 2):
-        TravelCart()
-    elif(choice == 3):
-        TravelOrder()
-    else:
-        print("Wrong Input!")
+    if choice == '1':
+        print(check_package())
+    elif choice == '2':
+       print(TravelCart())
+    elif choice == '3':
+        print(TravelOrder())
 
-#check package
-class TravelPackage:
-    def __init__(self, package_name, destination, price, availability):
-        self.package_name = package_name
-        self.destination = destination
-        self.price = price
+
+customer_displayMenu()
 
 def check_package(package_name):
     # Assume we have a list of available packages
@@ -44,28 +34,13 @@ def check_package(package_name):
 
     return customer_displayMenu
 
-customer_displayMenu()
-
-def main(choice):
-
-    choice=input("\nEnter your choice ('1' or '2' or '3' or '4'): ")
-
-    if(choice == 1):
-        TravelPackage()
-    elif(choice == 2):
-        TravelCart()
-    elif(choice == 3):
-        TravelOrder()
-    else:
-        print("Wrong Input!")
-        
 package_name = input("Enter the package name: ")
 package = check_package(package_name)
 
 if package:
     print(f"Package: {package.package_name}")
     print(f"Destination: {package.destination}")
-    print(f"Price: RM{package.price}")
+    print(f"Price: RM {package.price}")
 
 else:
     print("Package not found!")
