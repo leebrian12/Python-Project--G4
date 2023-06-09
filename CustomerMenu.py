@@ -6,6 +6,21 @@ def customer_displayMenu():
     print("3. Payment")
     print("4. Exit")
 
+customer_displayMenu()
+
+def main(choice):
+
+    choice=input("\nEnter your choice ('1' or '2' or '3' or '4'): ")
+
+    if(choice == 1):
+        TravelPackage()
+    elif(choice == 2):
+        TravelCart()
+    elif(choice == 3):
+        TravelOrder()
+    else:
+        print("Wrong Input!")
+
 #check package
 class TravelPackage:
     def __init__(self, package_name, destination, price, availability):
