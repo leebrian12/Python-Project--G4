@@ -12,16 +12,15 @@ class TravelPackage:
         self.package_name = package_name
         self.destination = destination
         self.price = price
-        self.availability = availability
 
 def check_package(package_name):
     # Assume we have a list of available packages
     available_packages = [
-        TravelPackage("Package A", "Pulau Langkawi", 150.00, 105.00),
-        TravelPackage("Package B", "Pulau Redang", 120.00, 84.00),
-        TravelPackage("Package C", "Pulau Ketam", 100.00, 70.00),
-        TravelPackage("Package D","Genting Highlands",350.00 ,245.00),
-        TravelPackage("Package E","Cameron Highlands",300.00 , 210.00),
+        TravelPackage("Package A", "Pulau Langkawi", 150.00),
+        TravelPackage("Package B", "Pulau Redang", 120.00),
+        TravelPackage("Package C", "Pulau Ketam", 100.00),
+        TravelPackage("Package D","Genting Highlands",350.00),
+        TravelPackage("Package E","Cameron Highlands",300.00),
     ]
 
     for package in available_packages:
@@ -38,7 +37,7 @@ if package:
     print(f"Package: {package.package_name}")
     print(f"Destination: {package.destination}")
     print(f"Price: RM{package.price}")
-    print(f"Availability: {package.availability} spots")
+
 else:
     print("Package not found!")
 
