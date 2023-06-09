@@ -29,7 +29,21 @@ def check_package(package_name):
 
     return customer_displayMenu
 
-# Example usage
+customer_displayMenu()
+
+def main(choice):
+
+    choice=input("\nEnter your choice ('1' or '2' or '3' or '4'): ")
+
+    if(choice == 1):
+        TravelPackage()
+    elif(choice == 2):
+        TravelCart()
+    elif(choice == 3):
+        TravelOrder()
+    else:
+        print("Wrong Input!")
+        
 package_name = input("Enter the package name: ")
 package = check_package(package_name)
 
@@ -71,17 +85,20 @@ cart = TravelCart()
 
 # Add packages to the cart
 package1 = TravelPackage("Package A", "Pulau Langkawi", 150.00)
-package2 = TravelPackage("Package B", "Pulau Redang", 120.00, 84.00)
-package3 = TravelPackage("Package C", "Pulau Ketam", 100.00, 70.00)
-package4 = TravelPackage("Package D","Genting Highlands",350.00 ,245.00)
-package5 = TravelPackage("Package E","Cameron Highlands",300.00 , 210.00)
+package2 = TravelPackage("Package B", "Pulau Redang", 120.00)
+package3 = TravelPackage("Package C", "Pulau Ketam", 100.00)
+package4 = TravelPackage("Package D","Genting Highlands",350.00)
+package5 = TravelPackage("Package E","Cameron Highlands",300.00)
 
 cart.add_to_cart(package1)
 cart.add_to_cart(package2)
 cart.add_to_cart(package3)
+cart.add_to_cart(package4)
+cart.add_to_cart(package5)
 
 # View the cart
 cart.view_cart()
+
 
 # Calculate Bill function
 class TravelOrder:
@@ -103,19 +120,4 @@ class TravelOrder:
         return bill_amount
 
 # Example usage
-order = TravelOrder("Brian Lee", "Pulau Langkawi", "2023-08-20", 150.00, 105.00)
-bill = order.calculate_bill()
-print(f"The bill amount is: RM {bill:.2f}")
-
-def main(choice):
-
-    choice=input("\nEnter your choice ('1' or '2' or '3' or '4'): ")
-
-    if(choice == 1):
-        TravelPackage()
-    elif(choice == 2):
-        TravelCart()
-    elif(choice == 3):
-        TravelOrder()
-    else:
-        print("Wrong Input!")
+order = TravelOrder("Brian Lee", "Pulau Langkawi", "2023-08-20", 150.00)
