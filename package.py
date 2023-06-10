@@ -93,8 +93,9 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
-if __name__ == '__main__':
+def run_admin():
+    if __name__ == '__main__':
     # Check if the package file exists, otherwise create it
-    if not os.path.isfile(PACKAGE_FILE):
-        save_packages([])
-    main()
+        if not os.path.isfile(PACKAGE_FILE):
+            save_packages([])
+        main()

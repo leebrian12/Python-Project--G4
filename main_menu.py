@@ -1,7 +1,7 @@
 import login_signin
-# import CustomerMenu
+import package
 
-def user_displayMenu():#这边是改user menu 的
+def user_displayMenu(): #这边是改user menu 的
     print("\n1.Pulau Langkawi		3D2N  	RM 150.00 RM 105.00")
     print("2.Pulau Redang		3D2N	RM 120.00 RM 84.00")
     print("3.Pulau Ketam		3D2N	RM 100.00 RM 70.00")
@@ -10,49 +10,19 @@ def user_displayMenu():#这边是改user menu 的
 
 
 
-def display_menu():
-    print("==== Customer Menu ====")
-    print("1. Add Customer")
-    print("2. Remove Customer")
-    print("3. View Customers")
-    print("4. Exit")
+def admin_displayMenu():
 
-# customers = []
+    print("adminnnduhjcdsjk")
 
-# while True:
-#     display_menu()
-#     choice = input("Enter your choice (1-4): ")
+    package.main()
 
-#     if choice == "1":
-#         name = input("Enter customer name: ")
-#         customers.append(name)
-#         print("Customer added successfully!")
-#     elif choice == "2":
-#         name = input("Enter customer name to remove: ")
-#         if name in customers:
-#             customers.remove(name)
-#             print("Customer removed successfully!")
-#         else:
-#             print("Customer not found!")
-#     elif choice == "3":
-#         print("Customer List:")
-#         for customer in customers:
-#             print(customer)
-#     elif choice == "4":
-#         print("Exiting...")
-#         break
-#     else:
-#         print("Invalid choice! Please enter a number from 1 to 4.")
-
-# def admin_displayMenu():#这边是改admin menu 的
-#     print("\nhahahah admin")
 
 def main(choice): #这里是main
     
     if(choice == 1):
         user_displayMenu()
     elif(choice == 2):
-        display_menu()
+        admin_displayMenu()
     else:
         print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
 
