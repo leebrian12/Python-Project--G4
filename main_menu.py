@@ -11,9 +11,6 @@ def user_displayMenu(): #这边是改user menu 的
 
 
 def admin_displayMenu():
-
-    print("adminnnduhjcdsjk")
-
     package.main()
 
 
