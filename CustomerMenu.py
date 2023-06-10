@@ -27,8 +27,27 @@ def remove_from_cart(package_name):
         file.write("\n".join(items))
     print(package_name + " removed from cart.")
 
-def make_payment():
+def process_payment():
+    with open("cart.txt", "r") as file:
+        items = file.readlines()
+
+    total_price = 0
+    with open("bill.txt", "r") as file:
+        packages = file.readlines()
+        for package in packages:
+            package_details = package.split(",")
+            package_name = package_details[0].strip()
+            package_price = float(package_details[1].strip())
+            if package_name + "\n" in items:
+                total_price += package_price
+
+    print("Total Price:", total_price)
+
+    with open("bill.txt", "w") as file:
+        file.write("")
+
     print("Payment processed. Thank you for your purchase!")
+
 if not os.path.exists("cart.txt"):
     with open("cart.txt", "w") as file:
         file.write("")
@@ -55,7 +74,13 @@ while True:
         package_name = input("Enter the package name to remove from cart: ")
         remove_from_cart(package_name)
     elif choice == "5":
-        make_payment()
+        cart_items = []
+        with open("cart.txt", "r") as file:
+            cart_items = file.readlines()
+        if len(cart_items) == 0:
+            print("Your cart is empty.")
+        else:
+            process_payment()
     elif choice == "6":
         break
     else:

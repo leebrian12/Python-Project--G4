@@ -1,1 +1,2 @@
-[{'name': 'package a', 'destination': 'japan', 'price': '5000'}, {'name': 'package b', 'destination': 'new york', 'price': '6000'}]
+
+package b
