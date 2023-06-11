@@ -60,7 +60,6 @@ def part2():
 
     if(choice == '1'):
         customer_register(users)
-        main()
     elif(choice == '2'):
         suc = customer_login(users)
         if(suc == 1):
@@ -85,7 +84,6 @@ def part3():
 
     if(choice == '1'):
         admin_register(users)
-        main()
     elif(choice == '2'):
         suc = admin_login(users)
         if(suc == 2):

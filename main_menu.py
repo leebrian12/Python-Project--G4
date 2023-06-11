@@ -1,5 +1,5 @@
 import login_signin
-import package
+import admin
 import CustomerMenu
 
 def user_displayMenu(): #这边是改user menu 的
@@ -7,7 +7,7 @@ def user_displayMenu(): #这边是改user menu 的
 
 
 def admin_displayMenu():
-    package.main()
+    admin.main()
 
 
 def main(choice): #这里是main
