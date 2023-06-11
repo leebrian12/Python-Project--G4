@@ -1,12 +1,12 @@
 def save_users(users):
-    with open('users_acount.txt', 'w') as file:
+    with open('AccountList.txt', 'a') as file:
         for username, user_data in users.items():
             file.write(f"{username},{user_data['password']},{user_data['role']}\n")
 
 def load_users():
     users = {}
     try:
-        with open('users_acount.txt', 'r') as file:
+        with open('AccountList.txt', 'r') as file:
             for line in file:
                 username, password, role = line.strip().split(',')
                 users[username] = {'password': password, 'role': role}
@@ -17,21 +17,21 @@ def load_users():
 def customer_register(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    users[username] = {'password': password, 'role': 'User'}
+    users[username] = {'password': password, 'role': 'User Account'}
     save_users(users)
     print("Registration successful!")
 
 def admin_register(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    users[username] = {'password': password, 'role': 'Admin'}
+    users[username] = {'password': password, 'role': 'Admin Account'}
     save_users(users)
     print("Registration successful!")
 
 def customer_login(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    if username in users and users[username]['password'] == password and users[username]['role'] == 'User':
+    if username in users and users[username]['password'] == password and users[username]['role'] == 'User Account':
         print("\n~~~ Welcome Back User ~~~")
         act = 1
         return act
@@ -41,7 +41,7 @@ def customer_login(users):
 def admin_login(users):
     username = input("Enter username: ")
     password = input("Enter password: ")
-    if username in users and users[username]['password'] == password and users[username]['role'] == 'Admin':
+    if username in users and users[username]['password'] == password and users[username]['role'] == 'Admin Account':
         print("\n~~~ Welcome Back Admin ~~~")
         act = 2
         return act
