@@ -17,30 +17,30 @@ def load_packages():
         return []
 
 def display_packages(packages):
-    print("Travel Packages:")
+    print("\n===== List of Travel Packages =====\n")
     if packages:
         for i, package in enumerate(packages, start=1):
             print(f"{i}. Name: {package['name']}, Destination: {package['destination']}, Price: {package['price']}")
     else:
-        print("No travel packages found.")
+        print("\nTravel Package not Found!")
         
 def add_package(packages):
-    name = input("Enter package name: ")
+    name = input("\nEnter package code (EXP: Package A): ")
     destination = input("Enter destination: ")
-    price = input("Enter price: ")
+    price = input("Enter price per person (RM): ")
     package = {"name": name, "destination": destination, "price": price}
     packages.append(package)
     save_packages(packages)
-    print("Package added successfully!")
+    print("\nPackage added successfully!")
 
 def display_packages(packages):
-    print("Travel Packages:")
+    print("\n===== List of Travel Packages =====\n")
     for i, package in enumerate(packages, start=1):
         print(f"{i}. Name: {package['name']}, Destination: {package['destination']}, Price: {package['price']}")
 
 def edit_package(packages):
     display_packages(packages)
-    index = int(input("Enter the index of the package to edit: ")) - 1
+    index = int(input("\nEnter the index of the package to edit (EXP: '1'): ")) - 1
     if 0 <= index < len(packages):
         package = packages[index]
         print("Enter new values (leave blank to keep the existing value):")
@@ -51,20 +51,20 @@ def edit_package(packages):
         package['destination'] = new_destination
         package['price'] = new_price
         save_packages(packages)
-        print("Package edited successfully!")
+        print("\nPackage edited successfully!")
     else:
-        print("Invalid package index!")
+        print("\nInvalid package index.Please try again!")
 
 def delete_package(packages):
     display_packages(packages)
-    index = int(input("Enter the index of the package to delete: ")) - 1
+    index = int(input("\nEnter the index of the package to delete (EXP: '1'): ")) - 1
     if 0 <= index < len(packages):
         package = packages[index]
         packages.remove(package)
         save_packages(packages)
-        print("Package deleted successfully!")
+        print("\nPackage deleted successfully!")
     else:
-        print("Invalid package index!")
+        print("\nInvalid package index.Please try again!")
 
 def main():
     current_directory = os.getcwd()
@@ -73,13 +73,13 @@ def main():
 
     packages = load_packages()
     while True:
-        print("\n------ Travel Package Management ------")
-        print("1. Add Package")
-        print("2. Edit Package")
-        print("3. Delete Package")
-        print("4. View Packages")
-        print("5. Exit")
-        choice = input("Enter your choice: ")
+        print("\n====== Travel Package Management ======")
+        print("\n         1. Add Package")
+        print("         2. Edit Package")
+        print("         3. Delete Package")
+        print("         4. View Packages")
+        print("         5. Exit")
+        choice = input("\nPlease enter your choice ('1' or '2' or '3' or '4' or '5'): ")
         if choice == "1":
             add_package(packages)
         elif choice == "2":
@@ -91,7 +91,7 @@ def main():
         elif choice == "5":
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("\nInvalid Choice! Please try again.")
 
 if __name__ == '__main__':
     # Check if the package file exists, otherwise create it
