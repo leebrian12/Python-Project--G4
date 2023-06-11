@@ -6,7 +6,6 @@ def user_displayMenu(): #这边是改user menu 的
     CustomerMenu.run_cus()
 
 
-
 def admin_displayMenu():
     package.main()
 

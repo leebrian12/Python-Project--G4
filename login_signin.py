@@ -50,10 +50,10 @@ def admin_login(users):
 
 def part2():
     users = load_users()
-    print("\n+++++++++ USER MENU +++++++++\n")
+    print("\n========= USER MENU =========\n")
     print("         1. Register")
     print("         2. Login")
-    print("         3. Exit")
+    print("         3. Back to Main")
 
     choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
 
@@ -74,10 +74,10 @@ def part2():
 
 def part3():
     users = load_users()
-    print("\n+++++++++ ADMIN MENU +++++++++\n")
+    print("\n========== ADMIN MENU ==========\n")
     print("         1. Register")
     print("         2. Login")
-    print("         3. Exit")
+    print("         3. Back to Main")
 
     choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
 
@@ -95,10 +95,15 @@ def part3():
 
 
 def main():
-    print("\n===+ Welcome to Fantastos +===\n")
-    print("         1. User")
-    print("         2. Admin")
-    print("         3. Exit")
+    print("\n**********************************")
+    print("||     Welcome to Fantastos\t||")
+    print("\n**********************************")
+    print("\n       TRAVEL AGENCY SYSTEM")
+    print("=================================")
+    print("            Main Menu\n   ")
+    print("            1. User")
+    print("            2. Admin")
+    print("            3. Exit")
 
     choice = input("\nPlease enter your choice ('1' or '2' or '3'): ")
     if choice == '1':
