@@ -13,7 +13,7 @@ def load_packages():
         return []
 
 def display_packages(packages):
-    print("Travel Packages:")
+    print("\n===== List of Travel Packages =====\n")
     if packages:
         for i, package in enumerate(packages, start=1):
             print(f"{i}. Name: {package['name']}, Destination: {package['destination']}, Price: {package['price']}")
@@ -31,7 +31,7 @@ def view_cart():
 def add_to_cart(package_name):
     with open("cart.txt", "a") as file:
         file.write(package_name + "\n")
-    print(package_name + " added to cart.")
+    print("\n"+package_name + " added to cart.")
 
 def remove_from_cart(package_name):
     with open("cart.txt", "r") as file:
@@ -39,7 +39,7 @@ def remove_from_cart(package_name):
     items = [item.strip() for item in items if item.strip() != package_name]
     with open("cart.txt", "w") as file:
         file.write("\n".join(items))
-    print(package_name + " removed from cart.")
+    print("\n"+package_name + " removed from cart.")
 
 def process_payment():
     with open("cart.txt", "r") as file:
@@ -90,10 +90,10 @@ def run_cus():
         elif choice == "2":
             view_cart()
         elif choice == "3":
-            package_name = input("\nEnter the package name to add to cart: ")
+            package_name = input("\nEnter the package code to add to cart (EXP:Package A): ")
             add_to_cart(package_name)
         elif choice == "4":
-            package_name = input("\nEnter the package name to remove from cart: ")
+            package_name = input("\nEnter the package code to remove from cart (EXP:Package A): ")
             remove_from_cart(package_name)
         elif choice == "5":
             cart_items = []
