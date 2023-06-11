@@ -37,6 +37,7 @@ def customer_login(users):
         return act
     else:
         print("\nINVALID ACCOUNT or not a User account.")
+        exit(0)
 
 def admin_login(users):
     username = input("Enter username: ")
@@ -47,6 +48,7 @@ def admin_login(users):
         return act
     else:
         print("INVALID ACCOUNT or not an Admin account.")
+        exit(0)
 
 def part2():
     users = load_users()
