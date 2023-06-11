@@ -1,14 +1,14 @@
 import os
 
 def display_packages():
-    print("Available Travel Packages:")
+    print("\n====== Available Travel Packages ======")
     with open("travel_packages.txt", "r") as file:
         packages = file.readlines()
         for package in packages:
             print(package.strip())
 
 def view_cart():
-    print("Your Cart:")
+    print("\nYour Cart:")
     with open("cart.txt", "r") as file:
         items = file.readlines()
         for item in items:
@@ -46,7 +46,7 @@ def process_payment():
     with open("bill.txt", "w") as file:
         file.write("")
 
-    print("Payment processed. Thank you for your purchase!")
+    print("Payment Successful. Thank you for your purchase!")
 
 
 def run_cus():
@@ -55,37 +55,37 @@ def run_cus():
             file.write("")
 
     while True:
-        print("\n--- Travel Package Store ---")
-        print("1. View Packages")
-        print("2. View Cart")
-        print("3. Add to Cart")
-        print("4. Remove from Cart")
-        print("5. Make Payment")
-        print("6. Exit")
+        print("\n====== FANTASTOS TRAVEL AGENCY SYSTEM ======")
+        print("\n         1. View Packages")
+        print("         2. View Cart")
+        print("         3. Add to Cart")
+        print("         4. Remove from Cart")
+        print("         5. Make Payment")
+        print("         6. Exit")
 
-        choice = input("Enter your choice (1-6): ")
+        choice = input("\nPlease enter your choice ('1' or '2' or '3' or '4' or '5' or '6'): ")
 
         if choice == "1":
             display_packages()
         elif choice == "2":
             view_cart()
         elif choice == "3":
-            package_name = input("Enter the package name to add to cart: ")
+            package_name = input("\nEnter the package name to add to cart: ")
             add_to_cart(package_name)
         elif choice == "4":
-            package_name = input("Enter the package name to remove from cart: ")
+            package_name = input("\nEnter the package name to remove from cart: ")
             remove_from_cart(package_name)
         elif choice == "5":
             cart_items = []
             with open("cart.txt", "r") as file:
                 cart_items = file.readlines()
             if len(cart_items) == 0:
-                print("Your cart is empty.")
-            else:
+                print("\nYOUR CART IS EMPTY !")
+            else: 
                 process_payment()
         elif choice == "6":
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("\nInvalid Choice! Please try again.")
 
-    print("Thank you for visiting our travel package store!")
+    print("\nTHANK YOU FOR CHOOSING FANTASTOS! HAVE A NICE DAY! ^_^")
