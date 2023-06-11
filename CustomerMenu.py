@@ -48,42 +48,44 @@ def process_payment():
 
     print("Payment processed. Thank you for your purchase!")
 
-if not os.path.exists("cart.txt"):
-    with open("cart.txt", "w") as file:
-        file.write("")
 
-while True:
-    print("\n--- Travel Package Store ---")
-    print("1. View Packages")
-    print("2. View Cart")
-    print("3. Add to Cart")
-    print("4. Remove from Cart")
-    print("5. Make Payment")
-    print("6. Exit")
+def run_cus():
+    if not os.path.exists("cart.txt"):
+        with open("cart.txt", "w") as file:
+            file.write("")
 
-    choice = input("Enter your choice (1-6): ")
+    while True:
+        print("\n--- Travel Package Store ---")
+        print("1. View Packages")
+        print("2. View Cart")
+        print("3. Add to Cart")
+        print("4. Remove from Cart")
+        print("5. Make Payment")
+        print("6. Exit")
 
-    if choice == "1":
-        display_packages()
-    elif choice == "2":
-        view_cart()
-    elif choice == "3":
-        package_name = input("Enter the package name to add to cart: ")
-        add_to_cart(package_name)
-    elif choice == "4":
-        package_name = input("Enter the package name to remove from cart: ")
-        remove_from_cart(package_name)
-    elif choice == "5":
-        cart_items = []
-        with open("cart.txt", "r") as file:
-            cart_items = file.readlines()
-        if len(cart_items) == 0:
-            print("Your cart is empty.")
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == "1":
+            display_packages()
+        elif choice == "2":
+            view_cart()
+        elif choice == "3":
+            package_name = input("Enter the package name to add to cart: ")
+            add_to_cart(package_name)
+        elif choice == "4":
+            package_name = input("Enter the package name to remove from cart: ")
+            remove_from_cart(package_name)
+        elif choice == "5":
+            cart_items = []
+            with open("cart.txt", "r") as file:
+                cart_items = file.readlines()
+            if len(cart_items) == 0:
+                print("Your cart is empty.")
+            else:
+                process_payment()
+        elif choice == "6":
+            break
         else:
-            process_payment()
-    elif choice == "6":
-        break
-    else:
-        print("Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")
 
-print("Thank you for visiting our travel package store!")
+    print("Thank you for visiting our travel package store!")
