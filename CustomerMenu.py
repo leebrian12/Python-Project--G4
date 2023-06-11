@@ -1,11 +1,25 @@
 import os
+import ast
 
-def display_packages():
-    print("\n====== Available Travel Packages ======")
-    with open("travel_packages.txt", "r") as file:
-        packages = file.readlines()
-        for package in packages:
-            print(package.strip())
+PACKAGE_FILE = 'travel_packages.txt'
+
+def load_packages():
+    try:
+        with open(PACKAGE_FILE, 'r') as file:
+            content = file.read()
+            if content:
+                return ast.literal_eval(content)
+    except FileNotFoundError:
+        return []
+
+def display_packages(packages):
+    print("Travel Packages:")
+    if packages:
+        for i, package in enumerate(packages, start=1):
+            print(f"{i}. Name: {package['name']}, Destination: {package['destination']}, Price: {package['price']}")
+    else:
+        print("No travel packages found.")
+
 
 def view_cart():
     print("\nYour Cart:")
@@ -50,6 +64,12 @@ def process_payment():
 
 
 def run_cus():
+    current_directory = os.getcwd()
+    abs_package_file_path = os.path.join(current_directory, PACKAGE_FILE)
+    print("Travel package file path:", abs_package_file_path)
+
+    packages = load_packages()
+
     if not os.path.exists("cart.txt"):
         with open("cart.txt", "w") as file:
             file.write("")
@@ -66,7 +86,7 @@ def run_cus():
         choice = input("\nPlease enter your choice ('1' or '2' or '3' or '4' or '5' or '6'): ")
 
         if choice == "1":
-            display_packages()
+            display_packages(packages)
         elif choice == "2":
             view_cart()
         elif choice == "3":
@@ -89,3 +109,5 @@ def run_cus():
             print("\nInvalid Choice! Please try again.")
 
     print("\nTHANK YOU FOR CHOOSING FANTASTOS! HAVE A NICE DAY! ^_^")
+
+run_cus()
