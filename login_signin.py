@@ -69,7 +69,8 @@ def part2():
     elif(choice == '3'):
         main()
     else:
-        print("\nInvalid Choice! Please try again.")
+        print("\nInvalid Choice! Please RE-RUN the program.")
+        exit(0)
 
 
 def part3():
@@ -91,7 +92,8 @@ def part3():
     elif(choice == '3'):
         main()
     else:
-        print("\nInvalid Choice! Please try again.")
+        print("\nInvalid Choice! Please RE-RUN the program.")
+        exit(0)
 
 
 def main():
@@ -118,7 +120,7 @@ def main():
             print("\nTHANK YOU FOR CHOOSING FANTASTOS!")
             exit(0)
     else:
-            print("\nInvalid Choice! Please try again.")
+            print("\nInvalid Choice! Please RE-RUN the program.")
 
 def login():
  
