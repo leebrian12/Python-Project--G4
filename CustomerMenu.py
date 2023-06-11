@@ -110,4 +110,3 @@ def run_cus():
 
     print("\nTHANK YOU FOR CHOOSING FANTASTOS! HAVE A NICE DAY! ^_^")
 
-run_cus()
