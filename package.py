@@ -28,7 +28,7 @@ def add_package(packages):
     name = input("\nEnter package code (EXP: Package A): ")
     destination = input("Enter destination: ")
     price = input("Enter price per person (RM): ")
-    package = {"name": name, "destination": destination, "price": price}
+    package = {"Package Code": name, "Destination": destination, "Price per person (RM)": price}
     packages.append(package)
     save_packages(packages)
     print("\nPackage added successfully!")
@@ -53,7 +53,7 @@ def edit_package(packages):
         save_packages(packages)
         print("\nPackage edited successfully!")
     else:
-        print("Invalid package index!")
+        print("\nInvalid package index.Please try again!")
 
 def delete_package(packages):
     display_packages(packages)
@@ -64,7 +64,7 @@ def delete_package(packages):
         save_packages(packages)
         print("\nPackage deleted successfully!")
     else:
-        print("Invalid package index!")
+        print("Invalid package index.Please try again!")
 
 def main():
     current_directory = os.getcwd()
