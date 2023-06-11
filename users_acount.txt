@@ -1,2 +1,0 @@
-kyro,1234,User
-admin,1234,Admin
