@@ -103,6 +103,7 @@ def run_cus():
                 print("\nYOUR CART IS EMPTY !")
             else: 
                 process_payment()
+                exit(0)
         elif choice == "6":
             break
         else:
