@@ -1,1 +1,1 @@
-[{'name': 'Package LJ', 'destination': 'TOYOTATA', 'price': '900'}, {'name': 'Package TT', 'destination': 'TTLY', 'price': '1111'}, {'name': 'Package C', 'destination': 'Thailand', 'price': '250'}]
+[{'name': 'A', 'destination': 'Tokyo', 'price': '900'}, {'name': 'B', 'destination': 'Paris', 'price': '1200'}, {'name': 'C', 'destination': 'Thailand', 'price': '250'}]
